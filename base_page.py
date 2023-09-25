@@ -22,6 +22,7 @@ class BasePage:
 
     def open_behance(self):
         self.chrome_driver.get(self.START_URL_BEHANCE)
+        print(f'Страница открыта')
         sleep(5)
 
     def is_opened(self):
