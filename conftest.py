@@ -12,7 +12,7 @@ def chrome_driver(request):
 
     os_name = os.name
     if os_name == 'nt':
-        servise = Service(executable_path=ChromeDriverManager().install())
+        servise = Service(executable_path=ChromeDriverManager(driver_version='115.0.5763.0').install())
     else:
         """Вариант загрузки драйвера для linux"""
         servise = Service(executable_path="/usr/bin/chromedriver")
@@ -41,7 +41,7 @@ def chrome_driver(request):
     chrome_options.add_argument('--window-size=1920,1080')
 
     chrome_options.add_argument("--hide-scrollbars")
-    chrome_options.add_argument('--headless')
+    # chrome_options.add_argument('--headless')
 
 
     chrome_driver = webdriver.Chrome(options=chrome_options, service=servise)

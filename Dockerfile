@@ -20,7 +20,7 @@ RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/
 # install chromedriver
 RUN apk update &&  \
     apk upgrade && \
-    apk add --no-cache chromium chromium-chromedriver tzdata
+    apk add --no-cache chromium chromium-chromedriver=115.0.5763.0 tzdata
 
 
 WORKDIR /usr/workspace
