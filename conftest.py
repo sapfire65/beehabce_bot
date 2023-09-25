@@ -10,14 +10,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture(scope='function', autouse=True)
 def chrome_driver(request):
 
-    os_name = os.name
-    if os_name == 'nt':
-        servise = Service(executable_path=ChromeDriverManager().install())
-    else:
-        """Вариант загрузки драйвера для linux"""
-        servise = Service(executable_path="/usr/bin/chromedriver")
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.binary_location = "/usr/bin/chromium-browser"
+    # os_name = os.name
+    # if os_name == 'nt':
+    #     servise = Service(executable_path=ChromeDriverManager().install())
+    # else:
+    #     """Вариант загрузки драйвера для linux"""
+    #     servise = Service(executable_path="/usr/bin/chromedriver")
+    #     chrome_options = webdriver.ChromeOptions()
+    #     chrome_options.binary_location = "/usr/bin/chromium-browser"
 
     chrome_options = Options()
     """блок отвечает за отключение обнаружения автоматизации"""
@@ -44,7 +44,7 @@ def chrome_driver(request):
     # chrome_options.add_argument('--headless')
 
 
-    chrome_driver = webdriver.Chrome(options=chrome_options, service=servise)
+    chrome_driver = webdriver.Chrome(options=chrome_options)
     request.cls.chrome_driver = chrome_driver
     chrome_driver.implicitly_wait(30)
     chrome_driver.delete_all_cookies()
