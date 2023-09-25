@@ -49,6 +49,7 @@ def chrome_driver(request):
     chrome_driver.implicitly_wait(30)
     chrome_driver.delete_all_cookies()
 
+
     yield chrome_driver
     chrome_driver.quit()
 
