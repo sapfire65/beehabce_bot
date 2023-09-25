@@ -37,3 +37,4 @@ def chrome_driver(request):
 
     yield chrome_driver
     chrome_driver.quit()
+
