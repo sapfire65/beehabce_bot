@@ -7,6 +7,8 @@ from user_profile import UserProfile
 from content_page import ContentPage
 
 
+
+
 class TestBase:
 
     base_page: BasePage

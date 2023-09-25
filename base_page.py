@@ -25,7 +25,7 @@ class BasePage:
         self.chrome_driver.stop_client()
         self.chrome_driver.refresh()
         print(f'Страница открыта')
-        sleep(5)
+
 
     def is_opened(self):
         # Проверяем что логотип загрузился и отображается. Значит страница загружена

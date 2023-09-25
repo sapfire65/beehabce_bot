@@ -12,7 +12,7 @@ def chrome_driver(request):
 
     os_name = os.name
     if os_name == 'nt':
-        servise = Service(executable_path=ChromeDriverManager(driver_version='115.0.5763.0').install())
+        servise = Service(executable_path=ChromeDriverManager().install())
     else:
         """Вариант загрузки драйвера для linux"""
         servise = Service(executable_path="/usr/bin/chromedriver")
