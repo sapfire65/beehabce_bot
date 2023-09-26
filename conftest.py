@@ -50,6 +50,7 @@
 #     yield chrome_driver
 #     chrome_driver.quit()
 
+from undetected_chromedriver import Chrome
 import pytest
 import os
 from selenium import webdriver
@@ -70,7 +71,7 @@ def chrome_driver(request):
         options.binary_location = "/usr/bin/chromium-browser"
 
     options = Options()
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1920,1080")
