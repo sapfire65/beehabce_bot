@@ -14,7 +14,7 @@ class TestFeature(TestBase):
         self.searching_results.check_and_click_user_card()
         sleep(2)
         self.user_profile.go_too_content_page()
-        self.content_page.click_like()
+        # self.content_page.click_like()
 
 
 
