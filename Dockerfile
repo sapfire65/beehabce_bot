@@ -37,6 +37,8 @@ RUN CHROME_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/l
 
 
 
+# Установка необходимых пакетов
+RUN apt-get update && apt-get install -y curl unzip jq
 
 
 
