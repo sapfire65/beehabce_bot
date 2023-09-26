@@ -13,9 +13,14 @@ RUN apk update
 RUN apk add --no-cache chromium chromium-chromedriver tzdata
 
 
-# Установка совместимой версии ChromeDriver
 
-RUN CHROME_VERSION=$(chromium --version | grep -oP "(?<=Chromium )[0-9]+") && \
+# Установка зависимостей
+RUN apk update && \
+    apk add --no-cache curl jq chromium chromium-chromedriver tzdata && \
+    apk add --no-cache udev ttf-freefont
+
+# Установка совместимой версии ChromeDriver
+RUN CHROME_VERSION="91" && \
     CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION") && \
     wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip" && \
     unzip chromedriver_linux64.zip && \
@@ -29,6 +34,10 @@ RUN CHROME_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/l
     unzip /tmp/chrome-linux64.zip -d /opt && \
     ln -s /opt/chrome-linux64/chrome /usr/local/bin/chrome && \
     rm /tmp/chrome-linux64.zip
+
+
+
+
 
 
 # Вспомогательный набор библиотек
