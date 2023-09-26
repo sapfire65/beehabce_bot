@@ -23,6 +23,16 @@ jobs:
         run: pip install -r requirements.txt
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
+
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.CI_TOKEN }}
+          repository: ${{ 'sapfire65/beehabce_bot' }}
+          retain_days: 0
+          keep_minimum_runs: 6
+
       - name: Run-BOT
         run: pytest -sv
 
