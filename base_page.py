@@ -128,6 +128,7 @@ class BasePage:
     def intoli_com(self):
         self.open(self.GO_TO_URL.INTOLI_URL)
 
+        print('Проверка на сервисе https://intoli.com')
         elem_1 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[1]').text
         elem_2 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[2]').text
         elem_3 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[3]').text
@@ -135,7 +136,8 @@ class BasePage:
         elem_5 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[5]').text
         elem_6 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[6]').text
 
-        print(f'{elem_1} | {elem_2} | {elem_3} | {elem_4} | {elem_5} | {elem_6}')
+        print(f'{elem_1} | {elem_2} | {elem_3} | {elem_4} | {elem_5} | {elem_6}\n\n')
+
 
 
 
