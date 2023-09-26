@@ -61,15 +61,16 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture(scope="function", autouse=True)
 def chrome_driver(request):
 
-    os_name = os.name
-    if os_name == 'nt':
-        servise = Service(executable_path=ChromeDriverManager().install())
-    else:
-        """Вариант загрузки драйвера для linux"""
-        servise = Service(executable_path="/usr/bin/chromedriver")
-        options = webdriver.ChromeOptions()
-        options.binary_location = "/usr/bin/chromium-browser"
+    # os_name = os.name
+    # if os_name == 'nt':
+    #     servise = Service(executable_path=ChromeDriverManager().install())
+    # else:
+    #     """Вариант загрузки драйвера для linux"""
+    #     servise = Service(executable_path="/usr/bin/chromedriver")
+    #     options = webdriver.ChromeOptions()
+    #     options.binary_location = "/usr/bin/chromium-browser"
 
+    servise = Service(executable_path=ChromeDriverManager().install())
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
