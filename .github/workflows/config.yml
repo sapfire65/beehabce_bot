@@ -19,11 +19,15 @@ jobs:
         with:
           python-version: "3.11.5"
       - uses: actions/checkout@v4
+
       - name: install dependencies
         run: pip install -r requirements.txt
+
       - name: Install Chrome
         run: sudo apt-get install google-chrome-stable
 
+      - name: Run-BOT
+        run: pytest -sv
 
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
@@ -33,8 +37,7 @@ jobs:
           retain_days: 0
           keep_minimum_runs: 6
 
-      - name: Run-BOT
-        run: pytest -sv
+
 
 
 
