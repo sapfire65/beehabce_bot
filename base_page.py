@@ -11,7 +11,7 @@ import re
 class BasePage:
     URL_IP_API = 'http://ip-api.com/line'
 
-    START_URL_BEHANCE = Links.START_URL
+    GO_TO_URL = Links()
     LOGO_ADOBE = ('xpath', '//div[@class="PrimaryNav-adobeLogo-VeZ"]')
 
 
@@ -20,11 +20,17 @@ class BasePage:
         self.wait = WebDriverWait(chrome_driver, 15, 1)
 
 
-    def open_behance(self):
-        self.chrome_driver.get(self.START_URL_BEHANCE)
+    def open(self, url):
+        self.chrome_driver.get(url)
         self.chrome_driver.stop_client()
         self.chrome_driver.refresh()
-        print(f'Страница открыта')
+
+
+    def open_beehance(self):
+        url = self.GO_TO_URL.BEHANCE_URL
+        self.open(url)
+
+        print(f'Страница: > {url} открыта')
 
 
     def is_opened(self):
@@ -118,6 +124,19 @@ class BasePage:
 
         self.find_visibility_of_element(selector, exception_text)
         return selector
+
+    def intoli_com(self):
+        self.open(self.GO_TO_URL.INTOLI_URL)
+
+        elem_1 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[1]').text
+        elem_2 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[2]').text
+        elem_3 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[3]').text
+        elem_4 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[4]').text
+        elem_5 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[5]').text
+        elem_6 = self.chrome_driver.find_element('xpath', '(//span[@class="age"])[6]').text
+
+        print(f'{elem_1} | {elem_2} | {elem_3} | {elem_4} | {elem_5} | {elem_6}')
+
 
 
 
