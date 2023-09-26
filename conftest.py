@@ -78,7 +78,7 @@ def chrome_driver(request):
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    driver = webdriver.Chrome(options=options, service=servise)
+    driver = webdriver.Chrome(options=options)
     request.cls.chrome_driver = driver
     yield driver
     driver.quit()
