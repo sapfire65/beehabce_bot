@@ -32,7 +32,7 @@ RUN CHROME_VERSION="91" && \
 RUN CHROME_URL=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json | jq -r '.channels.Stable.downloads.chrome[] | select(.platform == "linux64") | .url') && \
     curl -sSLf --retry 3 --output /tmp/chrome-linux64.zip "$CHROME_URL" && \
     unzip /tmp/chrome-linux64.zip -d /opt && \
-    ln -s /opt/chrome-linux64/chrome /usr/local/bin/chrome && \
+    ln -s /opt/chrome-linux64/chrome /usr/bin/chromium-browser && \
     rm /tmp/chrome-linux64.zip
 
 
