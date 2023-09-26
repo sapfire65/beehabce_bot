@@ -50,7 +50,7 @@
 #     yield chrome_driver
 #     chrome_driver.quit()
 
-from undetected_chromedriver import Chrome
+# from undetected_chromedriver import Chrome
 import pytest
 import os
 from selenium import webdriver
