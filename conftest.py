@@ -70,7 +70,7 @@ def chrome_driver(request):
     #     options = webdriver.ChromeOptions()
     #     options.binary_location = "/usr/bin/chromium-browser"
 
-    servise = Service(executable_path=ChromeDriverManager().install())
+    # servise = Service(executable_path=ChromeDriverManager().install())
     options = Options()
     options.add_argument("--headless")
     options.add_argument("--no-sandbox")
