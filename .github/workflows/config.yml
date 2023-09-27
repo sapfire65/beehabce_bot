@@ -33,7 +33,7 @@ jobs:
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.CI_TOKEN }}
-          repository: ${{ 'sapfire65/beehabce_bot' }}
+          repository: ${{ 'sapfire65/beehance_bot' }}
           retain_days: 0
           keep_minimum_runs: 10
 
