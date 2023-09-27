@@ -1,4 +1,4 @@
-from base_test import TestBase
+from base.base_test import TestBase
 from time import sleep
 from random import randint
 

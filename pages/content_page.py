@@ -1,6 +1,4 @@
-from base_page import BasePage, EC
-from selenium.webdriver.common.action_chains import ActionChains
-from links import Links
+from base.base_page import BasePage
 
 
 class ContentPage(BasePage):

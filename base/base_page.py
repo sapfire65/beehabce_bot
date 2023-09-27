@@ -2,10 +2,9 @@ import requests
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.keys import Keys
 from time import sleep
 from random import uniform
-from links import Links
+from config.links import Links
 import re
 
 class BasePage:

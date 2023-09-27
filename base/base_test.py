@@ -1,10 +1,10 @@
 import pytest
 
-from base_page import BasePage
-from start_page import StartPage
-from searching_results import SerchResults
-from user_profile import UserProfile
-from content_page import ContentPage
+from base.base_page import BasePage
+from pages.start_page import StartPage
+from pages.searching_results import SerchResults
+from pages.user_profile import UserProfile
+from pages.content_page import ContentPage
 
 
 

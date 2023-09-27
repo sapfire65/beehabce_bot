@@ -1,5 +1,4 @@
-from base_page import BasePage, EC
-from links import Links
+from base.base_page import BasePage
 from selenium.webdriver.common.action_chains import ActionChains
 
 class SerchResults(BasePage):

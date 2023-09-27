@@ -1,6 +1,5 @@
-from base_page import BasePage, EC
+from base.base_page import BasePage
 from selenium.webdriver.common.action_chains import ActionChains
-from links import Links
 from random import randint
 
 class UserProfile(BasePage):

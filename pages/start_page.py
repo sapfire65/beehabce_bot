@@ -1,6 +1,6 @@
-from base_page import BasePage, EC
+from base.base_page import BasePage
 from selenium.webdriver.common.keys import Keys
-from links import Links
+
 
 class StartPage(BasePage):
     SEARCH_TEXT = 'Iylia Cherenkova'
