@@ -6,7 +6,7 @@ class TestFeature(TestBase):
     def test_start_script(self):
         self.start_page.check_ip()
         count_sleep = randint(0, 7)
-        print(f'Пауза до старта {count_sleep}')
+        print(f'Пауза до старта > {count_sleep} минута')
         sleep(count_sleep)
 
         self.base_page.intoli_com()
