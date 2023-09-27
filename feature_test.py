@@ -5,8 +5,8 @@ from random import randint
 class TestFeature(TestBase):
     def test_start_script(self):
         self.start_page.check_ip()
-        count_sleep = randint(0, 7)
-        print(f'Пауза до старта > {count_sleep} минута')
+        count_sleep = randint(0, 3)
+        print(f'Пауза до старта > {count_sleep} мин')
         sleep(count_sleep)
 
         self.base_page.intoli_com()
