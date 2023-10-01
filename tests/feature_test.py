@@ -3,6 +3,7 @@ from time import sleep
 from random import randint
 
 class TestFeature(TestBase):
+        
     def test_start_script(self):
         self.start_page.check_ip()
         count_sleep = randint(0, 3)
@@ -17,7 +18,7 @@ class TestFeature(TestBase):
         self.searching_results.check_and_click_user_card()
         sleep(2)
         self.user_profile.go_too_content_page()
-        # self.content_page.click_like()
+        self.content_page.click_like(4)
 
 
 
