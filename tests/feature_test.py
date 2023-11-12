@@ -5,9 +5,6 @@ from random import randint
 
 class TestFeature(TestBase):
 
-    def __init__(self):
-        pass
-
     def test_start_script(self):
         self.start_page.check_ip()
         count_sleep = randint(0, 3)
