@@ -47,7 +47,7 @@ def chrome_driver(request):
     chrome_options.add_argument('--window-size=1920,1080')
 
     chrome_options.add_argument("--hide-scrollbars")
-    # chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')
 
     chrome_driver = webdriver.Chrome(options=chrome_options)
     request.cls.chrome_driver = chrome_driver
