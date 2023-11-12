@@ -16,7 +16,7 @@ class BasePage:
 
     def __init__(self, chrome_driver):
         self.chrome_driver = chrome_driver
-        self.wait = WebDriverWait(chrome_driver, 15, 1)
+        self.wait = WebDriverWait(chrome_driver, 50, 1)
 
 
     def open(self, url):
